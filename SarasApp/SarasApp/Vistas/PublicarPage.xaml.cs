@@ -40,6 +40,7 @@ namespace SarasApp
             Publicacion publicaciones = new Publicacion()
             {
                 Estado = 1,
+                Destacar = 1,
                 idUserPublico = userFiltrado.user,
                 Titulo = EntTitulo.Text,
                 Contenido = EntContenido.Text,
