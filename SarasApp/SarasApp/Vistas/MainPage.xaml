@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SarasApp"
+             x:Class="SarasApp.MainPage">
+
+    <ContentPage.Content>
+        <Grid>
+
+            <Image Source="fondoApp.jpg" Aspect="AspectFill"></Image>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout  Grid.Row="0" WidthRequest="100" HeightRequest="100" Margin="0,60,0,30">
+                    <Label TextColor="#444" FontSize="50" HorizontalTextAlignment="Center" FontFamily="Helvetica Neue">SarasaUCSE</Label>
+                </StackLayout>
+                <StackLayout Grid.Row="1" Padding="30,20">
+                    <Entry Placeholder="Nombre Usuario" PlaceholderColor="White" x:Name="EntUsername"></Entry>
+                    <Entry Placeholder="Contraseña" PlaceholderColor="White" IsPassword="True" x:Name="EntPassword"></Entry>
+                    <Button Clicked="OpenContenido" Text="Iniciar Sesión" BackgroundColor="#3c8dbc" BorderRadius="20" TextColor="White" HeightRequest="40" ></Button>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Recuperar Contraseña" Font="Bold"></Label>
+                        <Label Text="Registrarse" HorizontalOptions="EndAndExpand" Font="Bold"></Label>
+                    </StackLayout>
+                </StackLayout>
+
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

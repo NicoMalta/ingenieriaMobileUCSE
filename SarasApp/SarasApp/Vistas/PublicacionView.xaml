@@ -1,0 +1,57 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SarasApp.Vistas.PublicacionView">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0">
+                <Button Text="Volver" Clicked="Publicacion_Volver"></Button>
+                <Button Text="Comentar" Clicked="Comentar_Publicacion"></Button>
+                <Button Text="Destacar" Clicked="Destacar_Publicacion"></Button>
+            </StackLayout>
+            <StackLayout Grid.Row="1">
+
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding Titulo}" TextColor="Black" x:Name="VTitulo"></Label>
+                    <Label Text="{Binding idUserPublico}" TextColor="Black" x:Name="VidUserPublico"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Grid.Row="2">
+                    <WebView WidthRequest="1000" HeightRequest="1000">
+                        <WebView.Source>
+                            <HtmlWebViewSource Html="{Binding Contenido}" x:Name="VContenido"/>
+                        </WebView.Source>
+                    </WebView>
+                </StackLayout>
+
+                <StackLayout Grid.Row="3">
+                    <ListView x:Name="ComentariosListView">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding idUserComento}" TextColor="Black"></Label>
+                                        <StackLayout Orientation="Horizontal" Grid.Row="4">
+                                            <WebView WidthRequest="1000" HeightRequest="1000">
+                                                <WebView.Source>
+                                                    <HtmlWebViewSource Html="{Binding ContenidoComentario}"/>
+                                                </WebView.Source>
+                                            </WebView>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
